@@ -35,6 +35,7 @@ class App extends React.Component {
         this.setState({ userData: data}) 
       }
       console.log("fetch data message in fetchUser", data.message);
+      console.log("username at end of fetch users", this.state.userName);
     })
     .catch(err => console.log("there was an error in fetchUser", err)); 
 
@@ -42,10 +43,12 @@ class App extends React.Component {
 
   fetchFollowers = () => {
 
+    console.log("username at the start of fetch followers", this.state.userName);
+
     if(this.state.userName === "") {
       console.log("this.state.username in followers", this.state.userName);
       window.alert("That user could not be found in IF FETCHFOLLOWERS.");
-      return;
+      
     }
     else {
       fetch(`https://api.github.com/users/${this.state.userName}/followers`)
@@ -54,8 +57,8 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {      
         if(data.message){        
-          this.setState({ userName: ""}) 
-          window.alert("That user could not be found IN ELSE FETCH FOLLOWERS.");          
+          this.setState({ userName: ""})           
+          window.alert("That user could not be found.\nPlease try your search again.");          
         }else {
           this.setState({ followersData: data})
         }
@@ -63,7 +66,7 @@ class App extends React.Component {
       })
       .catch(err => console.log("there was an error in fetchFollowers", err)); 
   
-    
+      console.log("username at the end of fetch followers", this.state.userName);
       
     }
 
@@ -106,7 +109,7 @@ class App extends React.Component {
   } 
 
   render() {     
-    
+    console.log("username at the start of render", this.state.userName);
      
       return (
         
@@ -120,7 +123,7 @@ class App extends React.Component {
 
           <div className = "search-results-div">
 
-            {this.state.userName !== ""? 
+            {this.state.userName !== "" ? 
             <div>
               <div className = "users-content">              
                 <UserCard user = {this.state.userData}/>           
@@ -141,9 +144,7 @@ class App extends React.Component {
 
         </div>
 
-      );//end return  
-    
-    
+      );//end return      
     
 
   }//end render
