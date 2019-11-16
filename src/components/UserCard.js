@@ -28,7 +28,7 @@ function UserCard (props) {
             <Card.Content extra>      
                     
                 <Icon name='user' />
-                {props.user.followers} Followers  
+                {props.user.followers} Follower(s)  
                          
             </Card.Content>
 
