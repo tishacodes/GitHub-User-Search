@@ -1,0 +1,275 @@
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.main-container-div {  
+  display: flex;
+  flex-direction: column;  
+  width: 100%;
+  height: auto;   
+
+}
+
+.header-bar {
+  background-color: #24292e;
+  color: white;
+  width: 100%; 
+  margin-bottom: 50px;  
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  flex-wrap: no-wrap;
+  height: auto;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 2px px -8px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 0px 2px 5px -8px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 5px 10px -8px rgba(0, 0, 0, 0.42);
+}
+
+.search-form-section {
+  width: 100%;  
+  height: auto;  
+  
+}
+
+.search-form{  
+  display: flex;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px; 
+ 
+}
+
+.github-label-div{
+  width: 30%;
+ 
+}
+
+.search-div {  
+  width: 30%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border: 1px solid #3b3b3b;
+  background-color: white;
+  border-radius: 10px;
+  height: 26px;
+  overflow: hidden; 
+  
+}
+
+.search-input {   
+  width: 80%;
+  border-radius: 10px solid #3b3b3b;;
+  padding: 10px;
+  border: none;
+  height: 100%;
+  
+}
+
+.search-img {
+  width: 20%;
+  height: 15px;
+  
+}
+
+.search-results-div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;  
+  justify-content: space-around;
+
+}
+
+
+.users-content {  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  opacity: 0.9;
+}
+
+.followers-content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 40px;
+  opacity: 0.9;
+}
+
+.ui.card:hover {
+  transform: scale(1.1);
+  transition: 600ms;
+  cursor: pointer;
+}
+
+
+.ui.cards > .card > .content > .header:not(.ui), .ui.card > .content > .header {
+  text-align: center;
+}
+
+
+
+/********************************800px & Below - Tablet View****************************/
+@media (max-width: 800px) {
+
+  body {
+    width: 100%;       
+  }
+
+  .main-container-div {      
+    width: 100%;    
+  
+  }
+
+  .header-bar {    
+    width: 100%; 
+    
+  }
+  
+  .search-form-section {
+    width: 100%;  
+    
+    
+  }
+  
+  .search-form{      
+    width: 100%;    
+   
+  }
+
+  h2 {
+    font-size: 4vw;
+  }
+
+  .github-label-div{
+    width: 40%;
+   
+  }
+  
+  .search-div {
+    
+    width: 40%;
+    
+    
+  }
+  
+  .search-input {   
+    width: 80%;    
+    
+  }
+  
+  .search-img {
+    width: 20%;
+    
+    
+  }
+  
+  .search-results-div {
+    width: 100%;    
+  
+  }
+
+  .users-content {  
+    width: 100%;
+   
+  }
+  
+  .followers-content {
+    width: 100%;
+    
+  }
+  
+
+  
+}
+
+/****************************MOBILE VIEW***********************************/
+@media (max-width: 500px) {
+
+  body {
+    width: 100%;       
+  }
+
+  .main-container-div {      
+    width: 100%;   
+  
+  }
+
+  .header-bar {    
+    width: 100%; 
+    
+  }
+  
+  .search-form-section {
+    width: 100%;  
+    
+    
+  }
+  
+  .search-form{      
+    width: 100%;    
+   
+  }
+
+  h2 {
+    font-size: 5vw;
+  }
+
+  .github-label-div{
+    width: 50%;
+   
+  }
+  
+  .search-div {
+    
+    width: 40%;
+    
+    
+  }
+  
+  .search-input {   
+    width: 80%;    
+    
+  }
+  
+  .search-img {
+    width: 20%;
+    
+    
+  }
+  
+  .search-results-div {
+    width: 100%;
+    
+  
+  }
+
+  .users-content {  
+    width: 100%;
+   
+  }
+  
+  .followers-content {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+
+}
+
+
+
+
