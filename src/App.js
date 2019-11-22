@@ -133,11 +133,7 @@ class App extends React.Component {
             <div>
               <div className = "users-content">              
                 <UserCard user = {this.state.userData}/>                         
-              </div>
-
-              <div>
-                <Heatmap userName = {this.state.userName} /> 
-              </div>
+              </div>             
 
               <div>
                 <FollowersList followers = {this.state.followersData} />
