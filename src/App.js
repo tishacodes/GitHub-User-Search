@@ -132,15 +132,19 @@ class App extends React.Component {
             {this.state.userName !== "" ? 
             <div>
               <div className = "users-content">              
-                <UserCard user = {this.state.userData}/>    
-                <Heatmap userName = {this.state.userName} />       
+                <UserCard user = {this.state.userData}/>                         
+              </div>
+
+              <div>
+                <Heatmap userName = {this.state.userName} /> 
               </div>
 
               <div>
                 <FollowersList followers = {this.state.followersData} />
               </div>
-            </div>
             
+            </div>
+
             :
 
             <div className = "users-content"> 
