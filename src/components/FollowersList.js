@@ -1,7 +1,8 @@
 import React from "react";
 import FollowerCard from "./FollowerCard.js";
 
-function FollowersList (props) {
+
+function FollowersList (props){     
 
     return (
         <div className = "followers-content">

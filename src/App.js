@@ -3,7 +3,9 @@ import UserCard from "./components/UserCard.js";
 import FollowersList from "./components/FollowersList.js";
 import SearchForm from "./components/SearchForm.js";
 import BlankCard from "./components/BlankCard.js";
+import Heatmap from "./components/Heatmap.js";
 import NotFoundCard from "./components/NotFoundCard.js";
+import { CircleSpinner } from "react-spinners-kit";
 
 import './App.css';
 
@@ -39,7 +41,11 @@ class App extends React.Component {
     })
     .catch(err => console.log("there was an error in fetchUser", err)); 
 
+    
+
   }
+
+   
 
   fetchFollowers = () => {
 
@@ -126,7 +132,8 @@ class App extends React.Component {
             {this.state.userName !== "" ? 
             <div>
               <div className = "users-content">              
-                <UserCard user = {this.state.userData}/>           
+                <UserCard user = {this.state.userData}/>    
+                <Heatmap userName = {this.state.userName} />       
               </div>
 
               <div>
