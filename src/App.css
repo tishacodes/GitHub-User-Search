@@ -130,25 +130,23 @@ body {
  
 }
 
-.github-chart-img {
-  width: 100%; 
-
-}
-
 .github-chart-segment{
   margin-top: 20px !important;
   margin-bottom: 20px !important;
-  width: 1000px !important; 
+  width: 100% !important; 
+}
+
+.github-chart-segment img{
+  
+  width: 750px !important; 
+  height: 150px;
 }
 
 .github-chart-segment:hover {
-  transform: scale(1.1);
-  transition: 600ms;
+  transform: scale(1.005);
+  transition: 400ms;
   cursor: pointer;
 }
-
-
-
 
 /********************************800px & Below - Tablet View****************************/
 @media (max-width: 800px) {
@@ -219,7 +217,22 @@ body {
     width: 100%;
     
   }
+
+  .user-card-chart-div{
+    width: 100%;   
+   
+  }
   
+  .github-chart-img {
+    display: none;
+  
+  }
+  
+  .github-chart-segment{
+    
+    display: none;
+    
+  }
 
   
 }
@@ -295,6 +308,22 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+  }
+
+  .user-card-chart-div{
+    width: 100%;   
+   
+  }
+  
+ .github-chart-img {
+    display: none;
+  
+  }
+  
+  .github-chart-segment{
+    
+    display: none;
     
   }
 

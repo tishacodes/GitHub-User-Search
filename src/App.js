@@ -53,8 +53,7 @@ class App extends React.Component {
 
     if(this.state.userName === "") {
       console.log("this.state.username in followers", this.state.userName);
-      window.alert("That user could not be found in IF FETCHFOLLOWERS.");
-      
+          
     }
     else {
       fetch(`https://api.github.com/users/${this.state.userName}/followers`)
