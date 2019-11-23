@@ -40,17 +40,14 @@ class App extends React.Component {
       }else {
         this.setState({ userData: data}) 
       }
-      console.log("fetch data message in fetchUser", data.message);
-      console.log("username at end of fetch users", this.state.userName);
+      
     })
     .catch(err => console.log("there was an error in fetchUser", err));    
 
   }
    
 
-  fetchFollowers = () => {
-
-    console.log("username at the start of fetch followers", this.state.userName);
+  fetchFollowers = () => {    
 
     if(this.state.userName === "") {
       console.log("this.state.username in followers", this.state.userName);
@@ -73,11 +70,10 @@ class App extends React.Component {
         }else {
           this.setState({ followersData: data})
         }
-        console.log("fetch data in followers", data.message);
+       
       })
-      .catch(err => console.log("there was an error in fetchFollowers", err)); 
-  
-      console.log("username at the end of fetch followers", this.state.userName);
+      .catch(err => console.log("there was an error in fetchFollowers", err));   
+      
       
     }
 
@@ -112,18 +108,7 @@ class App extends React.Component {
   //runs every time our component state is updated and we re-render it
   //this will not run on the first render of our component only on re-renders
   //make subsequent API request based on things that have changed
-  componentDidUpdate(prevProps, prevState) {
-
-    console.log("component did update", this.state.userName);
-
-    console.log("this.state.userName", this.state.userName);
-
-    console.log("prevState.userName", prevState.userName);
-    
-    /*if ((this.state.userName !== prevState.userName)) {
-      this.fetchUser();
-      this.fetchFollowers();
-    }*/
+  componentDidUpdate(prevProps, prevState) {    
 
     if ((this.state.userName !== prevState.userName)) {
       this.fetchUser();
