@@ -3,7 +3,6 @@ import UserCard from "./components/UserCard.js";
 import FollowersList from "./components/FollowersList.js";
 import SearchForm from "./components/SearchForm.js";
 import BlankCard from "./components/BlankCard.js";
-import Heatmap from "./components/Heatmap.js";
 import NotFoundCard from "./components/NotFoundCard.js";
 import { CircleSpinner } from "react-spinners-kit";
 
@@ -17,7 +16,7 @@ class App extends React.Component {
     this.state = {
       userName: "",
       userData: {},
-      followersData: [{}]
+      followersData: []
     };
   } 
  
@@ -31,20 +30,22 @@ class App extends React.Component {
     .then(data => {  
       
       if(data.message){        
-        this.setState({ userName: ""})   
-        console.log("state user name in fetchUser if", this.state.userName);            
+        this.setState({ 
+          userName: "",
+          userData: {},
+          followersData: []
+        })        
+        console.log("state user name in fetchUser", this.state.userName);  
+                  
       }else {
         this.setState({ userData: data}) 
       }
       console.log("fetch data message in fetchUser", data.message);
       console.log("username at end of fetch users", this.state.userName);
     })
-    .catch(err => console.log("there was an error in fetchUser", err)); 
-
-    
+    .catch(err => console.log("there was an error in fetchUser", err));    
 
   }
-
    
 
   fetchFollowers = () => {
@@ -53,6 +54,7 @@ class App extends React.Component {
 
     if(this.state.userName === "") {
       console.log("this.state.username in followers", this.state.userName);
+      return;
           
     }
     else {
@@ -62,7 +64,11 @@ class App extends React.Component {
       .then(res => res.json())
       .then(data => {      
         if(data.message){        
-          this.setState({ userName: ""})           
+          this.setState({ 
+            userName: "",
+            userData: {},
+            followersData: []
+          })           
           window.alert("That user could not be found.\nPlease try your search again.");          
         }else {
           this.setState({ followersData: data})
@@ -91,7 +97,9 @@ class App extends React.Component {
   //run when the component is mounted and is first created - if you want to do something once at the start of a 
   //component's life you put it inside this method 
   componentDidMount(){  
-    
+
+    console.log("component did mount", this.state.userName);
+
     if(this.state.userName !== ""){
       this.fetchUser();
       this.fetchFollowers();   
@@ -99,22 +107,33 @@ class App extends React.Component {
 
   }
 
+  
+  //called after render
   //runs every time our component state is updated and we re-render it
   //this will not run on the first render of our component only on re-renders
   //make subsequent API request based on things that have changed
   componentDidUpdate(prevProps, prevState) {
 
-    console.log(this.state);
+    console.log("component did update", this.state.userName);
+
+    console.log("this.state.userName", this.state.userName);
+
+    console.log("prevState.userName", prevState.userName);
     
-    if ((this.state.userName !== prevState.userName) && (this.state.userName !== "")) {
+    /*if ((this.state.userName !== prevState.userName)) {
       this.fetchUser();
       this.fetchFollowers();
-    }
+    }*/
 
+    if ((this.state.userName !== prevState.userName)) {
+      this.fetchUser();
+      this.fetchFollowers();
+    }   
+    
   } 
 
   render() {     
-    console.log("username at the start of render", this.state.userName);
+    console.log("username at the start of render", this.state.userName);    
      
       return (
         
@@ -148,10 +167,9 @@ class App extends React.Component {
 
           </div>
 
-        </div>
+        </div>     
 
-      );//end return      
-    
+      );//end return     
 
   }//end render
 

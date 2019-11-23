@@ -142,11 +142,6 @@ body {
   height: 150px;
 }
 
-.github-chart-segment:hover {
-  transform: scale(1.005);
-  transition: 400ms;
-  cursor: pointer;
-}
 
 /********************************800px & Below - Tablet View****************************/
 @media (max-width: 800px) {

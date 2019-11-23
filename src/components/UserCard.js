@@ -6,6 +6,15 @@ import 'semantic-ui-css/semantic.min.css';
 
 function UserCard (props) {  
 
+  console.log("props", props.user.login);
+
+      if(!props.user.login){
+        return (
+         
+          null
+        )
+      }else{
+
         return(
           <div className = "user-card-chart-div">
           
@@ -48,8 +57,12 @@ function UserCard (props) {
             </div>
 
           </div>
+
+        
     
         );
+
+      }
         
       
 
