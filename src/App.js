@@ -132,7 +132,7 @@ class App extends React.Component {
 
           <div className = "search-results-div">
 
-            {this.state.userName !== "" ? 
+            {this.state.userData.login ? 
             <div>
               <div className = "users-content">              
                 <UserCard user = {this.state.userData}/>                         
